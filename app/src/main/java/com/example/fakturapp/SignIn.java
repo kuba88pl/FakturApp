@@ -1,2 +1,4 @@
-package com.example.fakturapp;public class SignIn {
+package com.example.fakturapp;
+
+public class SignIn {
 }
