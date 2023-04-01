@@ -1,10 +1,12 @@
 package com.example.fakturapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.provider.FontRequest;
 
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+public class EditProfile extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
