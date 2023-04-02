@@ -1,4 +1,4 @@
-package com.example.fakturapp;
+package com.fakturapp;
 
 import android.content.Context;
 
