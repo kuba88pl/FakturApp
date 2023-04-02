@@ -1,6 +1,6 @@
 package com.fakturapp.model;
 
-public class BillingInformation {
+public class BillingInformation  {
     private String nip;
     private String regon;
 

@@ -1,2 +1,7 @@
-package com.fakturapp.model;public class People {
+package com.fakturapp.model;
+
+
+public class People {
+
+
 }
