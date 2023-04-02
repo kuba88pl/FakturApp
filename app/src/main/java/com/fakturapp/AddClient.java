@@ -1,10 +1,13 @@
-package com.example.fakturapp;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.fakturapp;
 
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.fakturapp.R;
+
+public class AddClient extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
