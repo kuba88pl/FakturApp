@@ -1,10 +1,13 @@
-package com.example.fakturapp;
+package com.fakturapp;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.provider.FontRequest;
 
 import android.os.Bundle;
 
-import androidx.appcompat.app.AppCompatActivity;
+import com.example.fakturapp.R;
 
-public class AddClient extends AppCompatActivity {
+public class EditProfile extends AppCompatActivity {
 
 
     @Override

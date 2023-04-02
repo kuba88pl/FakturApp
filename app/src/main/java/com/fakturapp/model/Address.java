@@ -1,4 +1,4 @@
-package com.example.fakturapp.model;
+package com.fakturapp.model;
 
 public class Address {
     private String city;

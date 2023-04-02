@@ -1,4 +1,4 @@
-package com.example.fakturapp.model;
+package com.fakturapp.model;
 
 public class BaseEntity {
     private int id;
