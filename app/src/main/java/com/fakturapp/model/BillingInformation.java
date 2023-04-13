@@ -1,6 +1,6 @@
 package com.fakturapp.model;
 
-public class BillingInformation  {
+public class BillingInformation extends BaseEntity{
     private String nip;
     private String regon;
 
@@ -8,6 +8,12 @@ public class BillingInformation  {
     }
 
     public BillingInformation(String nip, String regon) {
+        this.nip = nip;
+        this.regon = regon;
+    }
+
+    public BillingInformation(int id, String nip, String regon) {
+        super(id);
         this.nip = nip;
         this.regon = regon;
     }
