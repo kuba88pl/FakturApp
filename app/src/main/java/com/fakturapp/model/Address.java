@@ -1,27 +1,33 @@
 package com.fakturapp.model;
 
+import com.x5.util.AccessAsBean;
+
+@AccessAsBean
 public class Address extends BaseEntity {
     private String city;
     private String street;
     private String number;
     private String place;
+    private String cityCode;
 
     public Address() {
     }
 
-    public Address(String city, String street, String number, String place) {
+    public Address(String city, String street, String number, String place, String cityCode) {
         this.city = city;
         this.street = street;
         this.number = number;
         this.place = place;
+        this.cityCode = cityCode;
     }
 
-    public Address(int id, String city, String street, String number, String place) {
+    public Address(int id, String city, String street, String number, String place, String cityCode) {
         super(id);
         this.city = city;
         this.street = street;
         this.number = number;
         this.place = place;
+        this.cityCode = cityCode;
     }
 
     public String getCity() {
@@ -55,4 +61,13 @@ public class Address extends BaseEntity {
     public void setPlace(String place) {
         this.place = place;
     }
+
+    public String getCityCode() {
+        return cityCode;
+    }
+
+    public void setCityCode(String cityCode) {
+        this.cityCode = cityCode;
+    }
+
 }
