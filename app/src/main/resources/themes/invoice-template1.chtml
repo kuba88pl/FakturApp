@@ -1,0 +1,57 @@
+<style>
+    .data {
+        position: absolute;
+        right: 0;
+    }
+    .seller {
+        position: absolute;
+        left: 20px;
+    }
+    .buyer {
+        position: absolute;
+        right: 20px;
+    }
+</style>
+
+<h4 class="data">Data wystawienia: {$invoiceData}</h4>
+<h4 class="data">Data sprzedaży/wykonania usługi: {$saleData}</h4>
+<br><br><br><br><br><br>
+<h1>Faktura nr: {$invoiceNumber}</h1>
+<div>
+    <div class="seller">
+        <h2>Sprzedawca</h2>
+        <h2>firstname lastname</h2>
+        <h2>{$address.street} {$address.number}</h2>
+        <h2>{$address.city_code} {$address.city}</h2>
+    </div>
+    <div class="buyer">
+        <h2>Nabywca</h2>
+        <h2>firstname lastname</h2>
+        <h2>{$address2.street} {$address2.number}</h2>
+        <h2>{$address2.city_code} {$address2.city}</h2>
+    </div>
+</div>
+<table>
+    <tr>
+        <th>Nazwa towaru/usługi</th>
+        <th>ilość</th>
+        <th>cena</th>
+        <th>wartość</th>
+    </tr>
+    {% loop in $products as $product %}
+    <tr>
+        <th>{$product.name}</th>
+        <th>{$product.quantity}</th>
+        <th>{$product.price}</th>
+        <th>{$product.value}</th>
+    </tr>
+    {% onEmpty %}
+    <tr>
+        <th>product name not found</th>
+        <th>product quantity not found</th>
+        <th>product price not found</th>
+        <th>product value not found</th>
+    </tr>
+    {% endloop %}
+</table>
+<h2>Do zapłaty: {$totalPrice}</h2>
