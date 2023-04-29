@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+
+import com.fakturapp.R;
 import com.fakturapp.invoiceGenerator.TemplateGenerator;
 import com.fakturapp.model.Address;
 import com.fakturapp.model.Product;
