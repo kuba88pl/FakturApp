@@ -5,7 +5,8 @@
 -->
 <data-extraction-rules>
     <cloud-backup>
-        <!-- TODO: Use <include> and <exclude> to control what is backed up.
+        <!-- TODO: Make confirm password equals password.
+        TODO: Make name and lastName account creation
         <include .../>
         <exclude .../>
         -->
