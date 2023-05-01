@@ -33,59 +33,32 @@
         app:layout_constraintBottom_toBottomOf="parent"
         tools:layout_editor_absoluteX="91dp" />
 
-    <EditText
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="308dp"
-        android:drawableLeft="@drawable/baseline_person_outline_24"
-        android:drawablePadding="20dp"
-        android:ems="10"
-        android:hint="imię"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="91dp" />
-
-    <EditText
-
-        android:id="@+id/editTextTextPersonName2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="237dp"
-        android:drawableLeft="@drawable/baseline_person_outline_24"
-        android:drawablePadding="20dp"
-        android:ems="10"
-        android:hint="nazwisko"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="94dp" />
-
 
     <EditText
         android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="165dp"
+        android:layout_marginBottom="284dp"
         android:drawableLeft="@drawable/baseline_password_24"
         android:drawablePadding="20dp"
         android:ems="10"
         android:hint="hasło"
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="91dp" />
+        tools:layout_editor_absoluteX="16dp" />
 
     <EditText
         android:id="@+id/confirm_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="95dp"
+        android:layout_marginBottom="212dp"
         android:drawableLeft="@drawable/baseline_password_24"
         android:drawablePadding="20dp"
         android:ems="10"
         android:hint="powtórz hasło"
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="91dp" />
+        tools:layout_editor_absoluteX="16dp" />
 
     <ImageButton
         android:id="@+id/buttonReg"
