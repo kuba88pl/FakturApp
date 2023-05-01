@@ -55,3 +55,5 @@
     {% endloop %}
 </table>
 <h2>Do zapłaty: {$totalPrice}</h2>
+
+<h4>test</h4>
