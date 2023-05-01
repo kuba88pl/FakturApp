@@ -21,7 +21,7 @@
         app:srcCompat="@drawable/createbackground" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress"
+        android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="376dp"
@@ -60,8 +60,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         tools:layout_editor_absoluteX="94dp" />
 
+
     <EditText
-        android:id="@+id/editTextNumberPassword"
+        android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="165dp"
@@ -69,12 +70,12 @@
         android:drawablePadding="20dp"
         android:ems="10"
         android:hint="hasło"
-        android:inputType="numberPassword"
+        android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:layout_editor_absoluteX="91dp" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/confirm_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="95dp"
@@ -87,7 +88,7 @@
         tools:layout_editor_absoluteX="91dp" />
 
     <ImageButton
-        android:id="@+id/imageButton4"
+        android:id="@+id/buttonReg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="19dp"
