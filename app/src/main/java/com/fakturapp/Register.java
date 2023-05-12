@@ -23,21 +23,19 @@ public class Register extends AppCompatActivity {
     EditText editTextEmail, editTextPassword, confirmPassword;
     ImageButton buttonReg;
     FirebaseAuth mAuth;
-            //************************************************//
-            //This login check doesn't work - I don't know why//
-            //************************************************//
 
 //    @Override
 //    public void onStart() {
 //        super.onStart();
 //        // Check if user is signed in (non-null) and update UI accordingly.
 //        FirebaseUser currentUser = mAuth.getCurrentUser();
-//        if(currentUser != null){
+//        if (currentUser != null) {
 //            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
 //            startActivity(intent);
 //            finish();
 //        }
 //    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,48 +54,34 @@ public class Register extends AppCompatActivity {
                 password = String.valueOf(editTextPassword.getText());
                 passwordConfirm = String.valueOf(confirmPassword.getText());
 
-                
-                if(TextUtils.isEmpty(email)) {
+
+                if (TextUtils.isEmpty(email)) {
                     Toast.makeText(Register.this, "Podaj email", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-                if(TextUtils.isEmpty(password)) {
+                if (TextUtils.isEmpty(password)) {
                     Toast.makeText(Register.this, "Podaj hasło", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                if(TextUtils.equals(password, passwordConfirm)) {
+                if (TextUtils.equals(password, passwordConfirm)) {
                     mAuth.createUserWithEmailAndPassword(email, password)
-                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if (task.isSuccessful()) {
-                                    Toast.makeText(Register.this, "Konto zostało utworzone.",
-                                            Toast.LENGTH_SHORT).show();
-                                } else {
-                                    // If sign in fails, display a message to the user.
-                                    Toast.makeText(Register.this, "Błąd przy zakładaniu konta!",
-                                            Toast.LENGTH_SHORT).show();
+                            .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                    if (task.isSuccessful()) {
+                                        Toast.makeText(Register.this, "Konto zostało utworzone.",
+                                                Toast.LENGTH_SHORT).show();
+                                    } else {
+                                        // If sign in fails, display a message to the user.
+                                        Toast.makeText(Register.this, "Błąd przy zakładaniu konta!",
+                                                Toast.LENGTH_SHORT).show();
+                                    }
                                 }
-                            }
-                        });
+                            });
                 } else {
                     Toast.makeText(Register.this, "Hasła muszą być identyczne!", Toast.LENGTH_SHORT).show();
                 }
-//                mAuth.createUserWithEmailAndPassword(email, password)
-//                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-//                            @Override
-//                            public void onComplete(@NonNull Task<AuthResult> task) {
-//                                if (task.isSuccessful()) {
-//                                    Toast.makeText(Register.this, "Konto zostało utworzone.",
-//                                            Toast.LENGTH_SHORT).show();
-//                                } else {
-//                                    // If sign in fails, display a message to the user.
-//                                    Toast.makeText(Register.this, "Błąd przy zakładaniu konta!",
-//                                            Toast.LENGTH_SHORT).show();
-//                                }
-//                            }
-//                        });
             }
         });
     }

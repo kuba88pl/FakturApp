@@ -2,7 +2,11 @@ package com.fakturapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 
 
 import com.fakturapp.invoiceGenerator.TemplateGenerator;
@@ -16,14 +20,42 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    ImageButton loginBtn, createBtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
+        setContentView(R.layout.activity_main);
+
+        loginBtn = findViewById(R.id.loginButton);
+        createBtn = findViewById(R.id.createAccount);
+
+        loginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+             openActivityLogin();
+            }
+        });
+
+        createBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openActivityRegister();
+            }
+        });
 
         toTestTemplateDeleteLater();
     }
 
+public void openActivityLogin() {
+        Intent intent = new Intent(this, Login.class);
+        startActivity(intent);
+}
+
+public void openActivityRegister() {
+        Intent intent = new Intent(this, Register.class);
+        startActivity(intent);
+}
 
 
 
