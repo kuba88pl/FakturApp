@@ -1,57 +1,66 @@
 <style>
-    .data {
-        position: absolute;
-        right: 0;
+    th {
+        padding: 0 50px;
+        background-color: yellow;
     }
-    .seller {
-        position: absolute;
-        left: 20px;
-    }
-    .buyer {
-        position: absolute;
-        right: 20px;
+    td {
+      text-align: center;
     }
 </style>
 
-<h4 class="data">Data wystawienia: {$invoiceData}</h4>
-<h4 class="data">Data sprzedaży/wykonania usługi: {$saleData}</h4>
+<div>
+    <h4 style="text-align: right;">Data wystawienia: {$invoiceData}</h4>
+</div>
 <br><br><br><br><br><br>
 <h1>Faktura nr: {$invoiceNumber}</h1>
-<div>
-    <div class="seller">
-        <h2>Sprzedawca</h2>
-        <h2>firstname lastname</h2>
-        <h2>{$address.street} {$address.number}</h2>
-        <h2>{$address.city_code} {$address.city}</h2>
-    </div>
-    <div class="buyer">
-        <h2>Nabywca</h2>
-        <h2>firstname lastname</h2>
-        <h2>{$address2.street} {$address2.number}</h2>
-        <h2>{$address2.city_code} {$address2.city}</h2>
-    </div>
+
+<div style="position: relative;
+                        top: 0px;
+                        left: 0px;
+                        width: 300px;
+                        height: 250px;
+                        margin: 0px;
+                        background-color: red;">
+    <h2>Sprzedawca</h2>
+    <h2>firstname lastname</h2>
+    <h2>{$address.street} {$address.number}</h2>
+    <h2>{$address.city_code} {$address.city}</h2>
 </div>
-<table>
-    <tr>
-        <th>Nazwa towaru/usługi</th>
-        <th>ilość</th>
-        <th>cena</th>
-        <th>wartość</th>
-    </tr>
-    {% loop in $products as $product %}
-    <tr>
-        <th>{$product.name}</th>
-        <th>{$product.quantity}</th>
-        <th>{$product.price}</th>
-        <th>{$product.value}</th>
-    </tr>
-    {% onEmpty %}
-    <tr>
-        <th>product name not found</th>
-        <th>product quantity not found</th>
-        <th>product price not found</th>
-        <th>product value not found</th>
-    </tr>
-    {% endloop %}
-</table>
-<h2>Do zapłaty: {$totalPrice}</h2>
+<div style="position: relative;
+                        top: -250px;
+                        left: 400px;
+                        width: 300px;
+                        height: 250px;
+                        margin: 0px;
+                        background-color: green;">
+    <h2>Nabywca</h2>
+    <h2>firstname lastname</h2>
+    <h2>{$address2.street} {$address2.number}</h2>
+    <h2>{$address2.city_code} {$address2.city}</h2>
+</div>
+<div style="position: relative; top: -215px; background-color: blue;">
+    <table>
+        <tr>
+            <th>Nazwa towaru/usługi</th>
+            <th>ilość</th>
+            <th>cena</th>
+            <th>wartość</th>
+        </tr>
+        {% loop in $products as $product %}
+        <tr>
+            <td>{$product.name}</td>
+            <td>{$product.quantity}</td>
+            <td>{$product.price}</td>
+            <td>{$product.value}</td>
+        </tr>
+        {% onEmpty %}
+        <tr>
+            <td>product name not found</td>
+            <td>product quantity not found</td>
+            <td>product price not found</td>
+            <td>product value not found</td>
+        </tr>
+        {% endloop %}
+    </table>
+    <h2 style="text-align: right;">Do zapłaty: {$totalPrice}</h2>
+</div>

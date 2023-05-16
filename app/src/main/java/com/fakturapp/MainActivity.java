@@ -2,13 +2,17 @@ package com.fakturapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.os.Bundle;
 
 
+import com.fakturapp.invoiceGenerator.PdfGenerator;
 import com.fakturapp.invoiceGenerator.TemplateGenerator;
 import com.fakturapp.model.Address;
 import com.fakturapp.model.Product;
+import com.itextpdf.text.DocumentException;
 
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -21,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        toTestTemplateDeleteLater();
+        toTestTemplateDeleteLater(getApplicationContext());
     }
 
 
@@ -37,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * I leave it here for now for some future test of template. It will be deleted later
      */
-    private void toTestTemplateDeleteLater(){
+    public void toTestTemplateDeleteLater(Context context){
         Address address = new Address(1, "m-ce", "p", "22", "1", "44-444");
         Address address2 = new Address(2, "m-ce2", "p2", "222", "12", "44-444");
         Address address3 = new Address(3, "m-ce3", "p3", "2223", "123", "44-444");
@@ -94,6 +98,15 @@ public class MainActivity extends AppCompatActivity {
         System.out.println("******************");
         System.out.println("html3 = " + s3);
         System.out.println("******************");
+
+        PdfGenerator pdfGenerator = PdfGenerator.PdfGeneratorFactory.getPdfGenerator(context);
+        try {
+            pdfGenerator.generatePdfFromHtml(s3);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (DocumentException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 }
