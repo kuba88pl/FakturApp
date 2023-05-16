@@ -2,14 +2,20 @@ package com.fakturapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.content.Context;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 
 
 import com.fakturapp.invoiceGenerator.PdfGenerator;
 import com.fakturapp.invoiceGenerator.TemplateGenerator;
 import com.fakturapp.model.Address;
 import com.fakturapp.model.Product;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.itextpdf.text.DocumentException;
 
 import java.io.IOException;
@@ -20,14 +26,56 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    ImageButton loginBtn, createBtn;
+
+    FirebaseAuth mAuth;
+
+//    @Override
+//    public void onStart() {
+//        super.onStart();
+//        // Check if user is signed in (non-null) and update UI accordingly.
+//        FirebaseUser currentUser = mAuth.getCurrentUser();
+//        if(currentUser != null){
+//            Intent intent = new Intent(MainActivity.this, MainScreen.class);
+//            startActivity(intent);
+//            finish();
+//        }
+//    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
+        setContentView(R.layout.activity_main);
+
+        loginBtn = findViewById(R.id.loginButton);
+        createBtn = findViewById(R.id.createAccount);
+
+        loginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+             openActivityLogin();
+            }
+        });
+
+        createBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openActivityRegister();
+            }
+        });
 
         toTestTemplateDeleteLater(getApplicationContext());
     }
 
+public void openActivityLogin() {
+        Intent intent = new Intent(this, Login.class);
+        startActivity(intent);
+}
+
+public void openActivityRegister() {
+        Intent intent = new Intent(this, Register.class);
+        startActivity(intent);
+}
 
 
 

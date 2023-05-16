@@ -28,7 +28,7 @@ public class User extends BaseEntity {
     }
 
     public String email() {
-        return email();
+        return email;
     }
 
     public String getAdress() {
