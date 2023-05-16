@@ -12,6 +12,8 @@ import android.widget.ImageButton;
 import com.fakturapp.invoiceGenerator.TemplateGenerator;
 import com.fakturapp.model.Address;
 import com.fakturapp.model.Product;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -21,6 +23,20 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     ImageButton loginBtn, createBtn;
+
+    FirebaseAuth mAuth;
+
+//    @Override
+//    public void onStart() {
+//        super.onStart();
+//        // Check if user is signed in (non-null) and update UI accordingly.
+//        FirebaseUser currentUser = mAuth.getCurrentUser();
+//        if(currentUser != null){
+//            Intent intent = new Intent(MainActivity.this, MainScreen.class);
+//            startActivity(intent);
+//            finish();
+//        }
+//    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

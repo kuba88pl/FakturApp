@@ -22,17 +22,17 @@ public class Login extends AppCompatActivity {
     ImageButton buttonLogin;
     FirebaseAuth mAuth;
 
-//    @Override
-//    public void onStart() {
-//        super.onStart();
-//        // Check if user is signed in (non-null) and update UI accordingly.
-//        FirebaseUser currentUser = mAuth.getCurrentUser();
-//        if(currentUser != null){
-//            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-//            startActivity(intent);
-//            finish();
-//        }
-//    }
+    @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if(currentUser != null){
+            Intent intent = new Intent(Login.this, MainScreen.class);
+            startActivity(intent);
+            finish();
+        }
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,7 +66,7 @@ public class Login extends AppCompatActivity {
                                 if (task.isSuccessful()) {
                                     // Sign in success, update UI with the signed-in user's information
                                     Toast.makeText(Login.this, "Zalogowano pomyślnie", Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(getApplicationContext(), EditProfile.class);
+                                    Intent intent = new Intent(getApplicationContext(), MainScreen.class);
                                     startActivity(intent);
                                     finish();
                                 } else {
